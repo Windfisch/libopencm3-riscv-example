@@ -19,9 +19,9 @@ endif
 SRC =			\
 	startup.c main.c
 
-CROSS_COMPILE ?= riscv-sifive-elf-
-CC = $(CROSS_COMPILE)gcc
-OBJCOPY = $(CROSS_COMPILE)objcopy
+PREFIX ?= riscv-sifive-elf-
+CC = $(PREFIX)gcc
+OBJCOPY = $(PREFIX)objcopy
 
 OPT_FLAGS = -Os
 CFLAGS += -march=rv32imac -mabi=ilp32 -mcmodel=medany \
